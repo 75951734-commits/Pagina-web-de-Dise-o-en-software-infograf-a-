@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía - Proceso de Diseño de Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .infographic-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .icon {
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+        
+        .card-content {
+            color: #555;
+        }
+        
+        .card-content ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .card-content li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .card-content li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .phase-number {
+            background: #2c3e50;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .workflow {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .workflow-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .process-steps:before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #3498db;
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 16%;
+        }
+        
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #3498db;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 0 0 4px white, 0 0 0 8px #3498db;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .step-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+            
+            .step {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .infographic-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Proceso de Diseño de Software</h1>
+        <p>Una guía visual de las etapas y mejores prácticas en el diseño de sistemas software</p>
+    </div>
+    
+    <div class="infographic-container">
+        <div class="info-card">
+            <div class="card-header">
+                <div class="icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2 class="card-title">Análisis de Requisitos</h2>
+            </div>
+            <div class="card-content">
+                <p>Fase inicial donde se recopilan y analizan las necesidades del cliente y usuarios:</p>
+                <ul>
+                    <li>Identificación de stakeholders</li>
+                    <li>Recopilación de requisitos funcionales y no funcionales</li>
+                    <li>Análisis de viabilidad técnica y económica</li>
+                    <li>Definición del alcance del proyecto</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <div class="card-header">
+                <div class="icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h2 class="card-title">Diseño Arquitectónico</h2>
+            </div>
+            <div class="card-content">
+                <p>Definición de la estructura general del sistema:</p>
+                <ul>
+                    <li>Patrones arquitectónicos (MVC, Microservicios, etc.)</li>
+                    <li>Componentes del sistema y sus relaciones</li>
+                    <li>Tecnologías y frameworks a utilizar</li>
+                    <li>Estrategias de escalabilidad y mantenimiento</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <div class="card-header">
+                <div class="icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h2 class="card-title">Diseño Detallado</h2>
+            </div>
+            <div class="card-content">
+                <p>Especificación detallada de cada componente:</p>
+                <ul>
+                    <li>Diagramas de clases y secuencia</li>
+                    <li>Diseño de base de datos y esquemas</li>
+                    <li>Interfaces de usuario (UI) y experiencia de usuario (UX)</li>
+                    <li>Algoritmos y estructuras de datos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="workflow">
+        <h2 class="workflow-title">Flujo del Proceso de Diseño de Software</h2>
+        
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-circle">1</div>
+                <div class="step-title">Requisitos</div>
+                <div class="step-description">Análisis de necesidades</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-circle">2</div>
+                <div class="step-title">Arquitectura</div>
+                <div class="step-description">Diseño global del sistema</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-circle">3</div>
+                <div class="step-title">Detallado</div>
+                <div class="step-description">Especificación componentes</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-circle">4</div>
+                <div class="step-title">Implementación</div>
+                <div class="step-description">Desarrollo del código</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-circle">5</div>
+                <div class="step-title">Pruebas</div>
+                <div class="step-description">Verificación y validación</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-circle">6</div>
+                <div class="step-title">Despliegue</div>
+                <div class="step-description">Instalación en producción</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="infographic-container">
+        <div class="info-card">
+            <div class="card-header">
+                <div class="icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="card-title">Principios de Diseño</h2>
+            </div>
+            <div class="card-content">
+                <p>Directrices fundamentales para un diseño de calidad:</p>
+                <ul>
+                    <li><strong>SOLID</strong>: Principios de diseño orientado a objetos</li>
+                    <li><strong>DRY</strong>: Don't Repeat Yourself (No te repitas)</li>
+                    <li><strong>KISS</strong>: Keep It Simple, Stupid (Mantenlo simple)</li>
+                    <li><strong>YAGNI</strong>: You Aren't Gonna Need It (No lo necesitarás)</li>
+                    <li>Cohesión alta y acoplamiento bajo</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <div class="card-header">
+                <div class="icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2 class="card-title">Herramientas Comunes</h2>
+            </div>
+            <div class="card-content">
+                <p>Software utilizado en el proceso de diseño:</p>
+                <ul>
+                    <li><strong>UML</strong>: Lenguaje Unificado de Modelado</li>
+                    <li><strong>Figma</strong>: Diseño de interfaces</li>
+                    <li><strong>Visual Paradigm</strong>: Herramienta de modelado</li>
+                    <li><strong>Draw.io</strong>: Diagramas y flujos</li>
+                    <li><strong>Lucidchart</strong>: Diagramación colaborativa</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <div class="card-header">
+                <div class="icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h2 class="card-title">Buenas Prácticas</h2>
+            </div>
+            <div class="card-content">
+                <p>Recomendaciones para un diseño exitoso:</p>
+                <ul>
+                    <li>Diseño iterativo e incremental</li>
+                    <li>Prototipado rápido para validar ideas</li>
+                    <li>Patrones de diseño apropiados al contexto</li>
+                    <li>Documentación clara y concisa</li>
+                    <li>Revisión del diseño por pares</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2023 - Infografía sobre Proceso de Diseño de Software</p>
+        <p>Esta infografía presenta los conceptos fundamentales del diseño de software de manera visual y comprensible</p>
+    </div>
+</body>
+</html>
